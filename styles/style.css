@@ -66,7 +66,13 @@ ol {
 }
 
 .content__details {
+  height: 534px;
   width: 399px;
+  overflow-x: hidden;
+}
+
+.content__details::-webkit-scrollbar {
+  display: none;
 }
 
 .content__list {
@@ -74,8 +80,6 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  height: 534px;
-  overflow: hidden scroll;
 }
 
 .content__video-card {
@@ -98,6 +102,10 @@ ol {
   text-decoration: none;
 }
 
+.content__video-card {
+  padding: 2px;
+}
+
 .content__video-card-title {
   color: #fff;
   font-family: Oswald;
@@ -106,18 +114,25 @@ ol {
   font-weight: 700;
   text-transform: uppercase;
   margin: 0 0 6px 0;
+  overflow-wrap: break-word;
 }
 
 .content__video-card-description {
   font-size: 18px;
   line-height: 16.2px;
   font-weight: 400;
+  overflow-wrap: break-word;
 }
 
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
   object-fit: cover;
+}
+
+.result {
+  width: 711px;
+  align-self: flex-end;
 }
 
 .result__video-container {
@@ -158,6 +173,7 @@ ol {
   background-color: transparent;
   padding: 2.5px 0;
   border: none;
+  outline: none;
   appearance: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -167,9 +183,13 @@ ol {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.search-form__textfield:focus {
+  outline: none;
+}
+
 .search-form__checkbox-list {
   display: flex;
-  align-items: center;
+  align-items: center;      
   gap: 15px;
 }
 
@@ -180,10 +200,29 @@ ol {
   cursor: pointer;
 }
 
-.search-form__pseudo-checkbox {
+.search-form__label:hover .search-form__label-text {
+  text-decoration-line: underline;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+}
+
+.search-form__label .search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  content: '';
+  display: flex;
+  width: 15px;
+  height: 15px;
+  background: #fff;
 }
 
 .search-form__label-text {
@@ -199,7 +238,24 @@ ol {
   font-weight: 700;
   border: 1px solid #fff;
   cursor: pointer;
-  padding: 6px 0;
+  padding: 6px 0;               
+}
+
+.button:focus {   
+  outline: none;
+}
+
+.button:hover {
+  text-decoration-line: underline;
+}
+
+.button:active {
+  border: 1px solid #FFF;
+  background: #545050;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
 }
 
 .search-form__submit-button {
