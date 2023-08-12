@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -61,7 +64,6 @@ ol {
   justify-content: center;
   align-items: flex-end;
   gap: 30px;
-  margin: 133px auto;
   padding: 0 30px;
 }
 
@@ -98,8 +100,29 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   color: #fff;
   text-decoration: none;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:hover {
+  text-decoration-line: underline;
+}
+
+.content__card-link:active {
+  background: #545050;
+}
+
+.content__card-link:focus-visible {
+  border: 1px solid #fff;
+}
+
+.content__card-link_current {
+  background: #545050;
 }
 
 .content__video-card {
@@ -189,7 +212,7 @@ ol {
 
 .search-form__checkbox-list {
   display: flex;
-  align-items: center;      
+  align-items: center;
   gap: 15px;
 }
 
@@ -238,10 +261,10 @@ ol {
   font-weight: 700;
   border: 1px solid #fff;
   cursor: pointer;
-  padding: 6px 0;               
+  padding: 6px 0;
 }
 
-.button:focus {   
+.button:focus {
   outline: none;
 }
 
@@ -250,7 +273,7 @@ ol {
 }
 
 .button:active {
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   background: #545050;
 }
 
