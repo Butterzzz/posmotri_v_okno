@@ -37,6 +37,16 @@ ol {
   list-style: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .title {
   font-family: Oswald;
   font-size: 75px;
@@ -127,10 +137,76 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  border: none;
 }
 
 .search-form__fieldset-title {
   font-size: 18px;
   font-weight: 400;
   margin: 0 0 5px 0;
+}
+
+.search-form__textfield {
+  width: 225px;
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  padding: 2.5px 0;
+  border: none;
+  appearance: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.search-form__textfield::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+}
+
+.search-form__label-text {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.button {
+  color: inherit;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid #fff;
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  align-self: flex-end;
+}
+
+.more-button {
+  width: 100%;
 }
